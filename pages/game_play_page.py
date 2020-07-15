@@ -33,7 +33,7 @@ class GamePlayPage(BasePage):
         moved_right = False
 
         for i in range(0, number_of_obstacles):
-            all_obstacles_unsorted = self.altdriver.find_object_which_contains(
+            all_obstacles_unsorted = self.altdriver.find_objects_which_contains(
                 By.NAME, "Obstacle")
             all_obstacles = sorted(
                 all_obstacles_unsorted, key=lambda k: float(k.worldZ))
