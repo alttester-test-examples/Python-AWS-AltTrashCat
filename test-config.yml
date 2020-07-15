@@ -70,6 +70,7 @@ phases:
       - echo "Navigate to test package directory"
       - cd $DEVICEFARM_TEST_PACKAGE_PATH
       - echo "Start Appium Python test"
+      - adb forward tcp:13000 tcp:13000
       # By default, the following command is used by Device Farm to run your Appium Python test.
       # The goal is to run all your tests files in the test package.
       # Alternatively, You may specify your customized command.
