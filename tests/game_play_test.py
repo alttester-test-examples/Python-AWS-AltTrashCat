@@ -1,4 +1,4 @@
-from tests.base_test import TestBase
+from base_test import TestBase
 from pages.main_menu_page import MainMenuPage
 from pages.game_play_page import GamePlayPage
 from pages.pause_overlay_page import PauseOverlayPage
