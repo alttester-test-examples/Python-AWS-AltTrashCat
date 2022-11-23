@@ -1,5 +1,5 @@
-from base_page import BasePage
-from altunityrunner.by import By
+from pages.base_page import BasePage
+from alttester import By
 
 
 class PauseOverlayPage(BasePage):

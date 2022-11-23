@@ -2,7 +2,7 @@ selenium
 pytest==5.0
 pytest-selenium
 virtualenv
-Appium-Python-Client==2.3.0
-altunityrunner==1.7.0
+Appium-Python-Client
+AltTester-Driver==1.8.0
 assertpy
 pytest-html

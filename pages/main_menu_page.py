@@ -1,5 +1,5 @@
-from base_page import BasePage
-from altunityrunner.by import By
+from pages.base_page import BasePage
+from alttester import By
 
 
 class MainMenuPage(BasePage):
@@ -39,9 +39,13 @@ class MainMenuPage(BasePage):
         return self.altdriver.wait_for_object(By.NAME, 'UICamera/Loadout/ThemeZone', timeout=2)
 
     def is_displayed(self):
-        if self.store_button and self.leader_board_button and self.settings_button \
-                and self.mission_button and self.run_button and self.character_name and self.theme_name:
-            return True
+        return self.store_button \
+            and self.leader_board_button \
+            and self.settings_button \
+            and self.mission_button \
+            and self.run_button \
+            and self.character_name \
+            and self.theme_name
 
     def press_run(self):
         self.run_button.tap()
