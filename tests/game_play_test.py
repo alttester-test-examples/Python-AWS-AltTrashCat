@@ -20,7 +20,7 @@ class TestGamePlay(TestBase):
         self.main_menu_page.load()
 
     def test_game_play_page_displayed_correctly(self):
-        assert (self.game_play_page.is_displayed())
+        assert self.game_play_page.is_displayed()
 
     def test_game_can_be_paused_and_resumed(self):
         self.game_play_page.press_pause()
