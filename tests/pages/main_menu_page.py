@@ -1,5 +1,6 @@
-from pages.base_page import BasePage
 from alttester import By
+
+from tests.pages.base_page import BasePage
 
 
 class MainMenuPage(BasePage):
