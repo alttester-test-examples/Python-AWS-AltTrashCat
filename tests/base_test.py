@@ -2,10 +2,7 @@ from unittest import TestCase
 from alttester import AltDriver, AltPortForwarding
 from appium import webdriver
 import os
-import sys
 import time
-
-sys.path.append(os.path.dirname(__file__))
 
 
 class TestBase(TestCase):
