@@ -1,8 +1,4 @@
-selenium
-pytest==5.0
-pytest-selenium
+pytest
 virtualenv
 Appium-Python-Client
-altunityrunner==1.5.7
-assertpy
-pytest-html
+AltTester-Driver==1.8.0

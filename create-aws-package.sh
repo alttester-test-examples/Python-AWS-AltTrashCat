@@ -19,6 +19,6 @@ TEST_FILE="test-package_${ENV}.zip"
 rm ${TEST_FILE}
 
 echo "Creating test file for environment: ${ENV}"
-zip -r a "${TEST_FILE}" tests/start_page_test.py tests/base_test.py pages/ requirements.txt 
+zip -r a "${TEST_FILE}" tests/ requirements.txt 
 echo "
 You should now upload test file '${TEST_FILE}' to AWS Cloud"
