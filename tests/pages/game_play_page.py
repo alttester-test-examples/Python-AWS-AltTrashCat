@@ -10,7 +10,7 @@ class GamePlayPage(BasePage):
 
     @property
     def pause_button(self):
-        return self.altdriver.wait_for_object(By.NAME, 'UICamera/Game/WholeUI/pauseButton', timeout=2)
+        return self.altdriver.wait_for_object(By.NAME, 'pauseButton', timeout=2)
 
     @property
     def character(self):
@@ -30,39 +30,31 @@ class GamePlayPage(BasePage):
         return int(self.character.get_component_property('CharacterInputController', 'currentLife', 'Assembly-CSharp'))
 
     def jump(self):
-        self.character.call_component_method(
-            'CharacterInputController', 'Jump', 'Assembly-CSharp')
+        self.character.call_component_method('CharacterInputController', 'Jump', 'Assembly-CSharp')
 
     def move_right(self):
-        self.character.call_component_method(
-            'CharacterInputController', 'ChangeLane', 'Assembly-CSharp', parameters=['1'])
+        self.character.call_component_method('CharacterInputController', 'ChangeLane', 'Assembly-CSharp', parameters=['1'])
 
     def move_left(self):
-        self.character.call_component_method(
-            'CharacterInputController', 'ChangeLane', 'Assembly-CSharp', parameters=['-1'])
+        self.character.call_component_method('CharacterInputController', 'ChangeLane', 'Assembly-CSharp', parameters=['-1'])
 
     def avoid_obstacles(self, number_of_obstacles=10, invincible=False):
         character = self.character
 
         if invincible:
-            character.call_component_method(
-                'CharacterInputController', 'CheatInvincible', 'Assembly-CSharp', parameters=['true'])
+            character.call_component_method('CharacterInputController', 'CheatInvincible', 'Assembly-CSharp', parameters=['true'])
 
         moved_left = False
         moved_right = False
 
         for _ in range(number_of_obstacles):
-            obstacles = [
-                obstacle for obstacle in self.obstacles if character.worldZ < obstacle.worldZ]
-            obstacles = sorted(
-                self.obstacles, key=lambda obstacle: obstacle.worldZ)
+            obstacles = [obstacle for obstacle in self.obstacles if character.worldZ < obstacle.worldZ]
+            obstacles = sorted(self.obstacles, key=lambda obstacle: obstacle.worldZ)
 
             obstacle = obstacles[0]
             next_obstacle = obstacles[1]
-            print('OBSTACLE: {}, z: {}, x: {}'.format(
-                obstacle.name, obstacle.worldZ, obstacle.worldX))
-            print('NEXT: {}, z: {}, x: {}'.format(next_obstacle.name,
-                  next_obstacle.worldZ, next_obstacle.worldX))
+            print('OBSTACLE: {}, z: {}, x: {}'.format(obstacle.name, obstacle.worldZ, obstacle.worldX))
+            print('NEXT: {}, z: {}, x: {}'.format(next_obstacle.name, next_obstacle.worldZ, next_obstacle.worldX))
 
             while obstacle.worldZ - character.worldZ > 5:
                 character = self.character

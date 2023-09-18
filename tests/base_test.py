@@ -1,6 +1,7 @@
 from unittest import TestCase
-from alttester import AltDriver, AltPortForwarding
+from alttester import AltDriver
 from appium import webdriver
+# from appium.options.android import UiAutomator2Options
 import os
 import time
 
@@ -20,27 +21,9 @@ class TestBase(TestCase):
             'http://localhost:4723/wd/hub', cls.desired_caps)
         print("Appium driver started")
         time.sleep(10)
-        cls.setup_port_forwarding()
-        cls.altdriver = AltDriver()
-
-    @classmethod
-    def setup_port_forwarding(cls):
-        try:
-            AltPortForwarding.remove_all_forward_android()
-        except:
-            print("No adb forward was present")
-        try:
-            AltPortForwarding.kill_all_iproxy_process()
-        except:
-            print("No iproxy forward was present")
-
-        if cls.platform == 'android':
-            AltPortForwarding.forward_android()
-            print("Port forwarded (Android).")
-        else:
-            AltPortForwarding.forward_ios()
-            print("Port forwarded (iOS).")
-
+        cls.altdriver = AltDriver(host="13.50.26.37", port=13000) # instantiate AltDriver with the Elastic IP for the AWS EC2 Instance
+        # cls.altdriver = AltDriver() # instantiate AltDriver for local connection
+        
     @classmethod
     def tearDownClass(cls):
         cls.altdriver.stop()
