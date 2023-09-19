@@ -27,8 +27,10 @@ class StartPage(BasePage):
         return self.altdriver.find_object(By.NAME, 'UnityURLButton')
 
     def is_displayed(self):
-        if self.start_button and self.start_text and self.logo_image and self.unity_url_button:
-            return True
+        return self.start_button \
+            and self.start_text \
+            and self.logo_image \
+            and self.unity_url_button
 
     def press_start(self):
         self.start_button.tap()
