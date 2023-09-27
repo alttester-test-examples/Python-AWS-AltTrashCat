@@ -97,6 +97,8 @@ phases:
   post_test:
     commands:
       # Remove the license activation after each run
+      # - cd AltTesterDesktopLinuxBatchmode
+      # - pkill AltTesterDesktop.x86_64
       # - ./AltTesterDesktop.x86_64 -batchmode -removeActivation
 
 # The artifacts phase lets you specify the location where your tests logs, device logs will be stored.
