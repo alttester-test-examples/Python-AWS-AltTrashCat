@@ -96,7 +96,7 @@ phases:
   # The post test phase includes are commands that are run after your tests are executed.
   post_test:
     commands:
-      # Remove the license activation after each run
+      # for the local connection: remove the license activation after each run
       # - cd AltTesterDesktopLinuxBatchmode
       # - pkill AltTesterDesktop.x86_64
       # - ./AltTesterDesktop.x86_64 -batchmode -removeActivation
