@@ -21,7 +21,7 @@ class TestBase(TestCase):
             'http://localhost:4723/wd/hub', cls.desired_caps)
         print("Appium driver started")
         time.sleep(10)
-        cls.altdriver = AltDriver(host="13.50.26.37", port=13000) # instantiate AltDriver with the Elastic IP for the AWS EC2 Instance
+        cls.altdriver = AltDriver(host="insert_ip_here", port=13000) # instantiate AltDriver with the Elastic IP for the AWS EC2 Instance
         # cls.altdriver = AltDriver() # instantiate AltDriver for local connection
         
     @classmethod
