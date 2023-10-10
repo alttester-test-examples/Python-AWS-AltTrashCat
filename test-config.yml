@@ -6,7 +6,7 @@ phases:
   # Default dependencies for testing frameworks supported on Device Farm are already installed.
   install:
     commands:
-      # for the local connection: export the license key, donwload, unzip and start the AltTester Desktop batchmode for Linux
+      # for the local connection: export the license key, download, unzip and start the AltTester Desktop batchmode for Linux
       # - export LICENSE_KEY=$(cat license.txt)
       # - wget https://alttester.com/app/uploads/AltTester/desktop/AltTesterDesktopLinuxBatchmode.zip
       # - unzip AltTesterDesktopLinuxBatchmode.zip
